@@ -5,6 +5,12 @@ from objects.Automata import Automata
 from objects.Estado import Estado
 from objects.Transcicion import Transicion
 
+automata = {
+    "1": [("2", "a"), ("1", "b")],
+    "2": [("3", "b"), ("5", "d")],
+    "3": [("4", "c"), ("3", "a")],
+    "4": [("5", "e")]
+}
 
 class Aplicacion:
     def __init__(self, interfaz):
@@ -133,12 +139,7 @@ class Aplicacion:
             self.area_analisis_cadena.configure(state="disabled")  # Deshabilitar después de modificar
             return
 
-        automata = {
-            "1": [("2", "a"), ("1", "b")],
-            "2": [("3", "b"), ("5", "d")],
-            "3": [("4", "c"), ("3", "a")],
-            "4": [("5", "e")]
-        }
+
 
 
         automata_obj = Automata("1", "5", automata)
